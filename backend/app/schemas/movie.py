@@ -1,0 +1,1 @@
+"""Movie and recommendation schemas."""

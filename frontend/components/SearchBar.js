@@ -1,0 +1,1 @@
+//recibe una entrada de texto y la envia al backend
