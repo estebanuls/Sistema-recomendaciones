@@ -2,25 +2,25 @@
 import json
 import numpy as np
 from pathlib import Path
-from backend.ml.modelo import load_model_artifacts
+from ml.modelo import load_model_artifacts
 
-# Configuración de rutas (Ajustar según la estructura de Esteban)
+# Configuración de rutas 
 BASE_DIR = Path(__file__).parent.parent
 ARTIFACTS_DIR = BASE_DIR / "data" / "artifacts"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
 class SVDRecommender:
     def __init__(self):
-        # 1. Cargar las matrices entrenadas por Leandro
+        # 1. Cargar las matrices entrenadas
         self.u, self.sigma, self.vt = load_model_artifacts(ARTIFACTS_DIR)
         
-        # 2. Cargar el mapeo de usuarios de Esteban (JSON)
+        # 2. Cargar el mapeo de usuarios 
         with open(PROCESSED_DIR / "user_map.json", "r") as f:
             user_map_raw = json.load(f)
             # El JSON es { "indice": "id_real" }, lo invertimos para buscar por ID real
             self.user_to_idx = {int(uid): int(idx) for idx, uid in user_map_raw.items()}
             
-        # 3. Cargar el mapeo de películas de Esteban (JSON)
+        # 3. Cargar el mapeo de películas 
         with open(PROCESSED_DIR / "movie_map.json", "r") as f:
             self.movie_map = json.load(f) # { "indice": "id_real" }
 
@@ -30,7 +30,7 @@ class SVDRecommender:
         """
         if user_id not in self.user_to_idx:
             # Por ahora, si no existe el usuario, lanzamos un error o lista vacía
-            # Bernardo manejará el Cold Start aquí después.
+            # Se manejará el Cold Start aquí después.
             return []
 
         user_idx = self.user_to_idx[user_id]
