@@ -1,0 +1,1 @@
+"""Application service that adapts the algorithm layer to API responses."""

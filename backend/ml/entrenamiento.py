@@ -1,0 +1,1 @@
+"""Pipeline orchestration for SQLite generation and optional SVD training."""

@@ -1,0 +1,1 @@
+"""Interaction validation schemas."""
