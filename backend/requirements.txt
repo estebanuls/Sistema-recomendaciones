@@ -1,4 +1,4 @@
-#posibles dependencias
-pydantic==2.11.7
-pydantic-settings==2.10.1
-numpy==2.3.2
+numpy>=2.0,<3.0
+pandas>=2.2,<3.0
+pydantic>=2.13,<3.0
+bcrypt>=5.0,<6.0
