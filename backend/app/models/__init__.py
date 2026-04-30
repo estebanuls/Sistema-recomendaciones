@@ -1,0 +1,1 @@
+"""Modelos de dominio sin ORM."""
