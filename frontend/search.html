@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MovieLens Recommender</title>
+  <title>Busqueda | MovieLens Recommender</title>
   <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -27,36 +27,26 @@
       <button class="button" type="submit">Buscar</button>
     </form>
     <nav class="nav-links">
-      <a href="/profile.html" class="button ghost">Perfil</a>
-      <button id="refresh-recommendations" class="button secondary" type="button">Actualizar recomendaciones</button>
-      <button id="logout-button" class="button" type="button">Cerrar sesion</button>
+      <a href="/" class="button ghost">Inicio</a>
+      <a href="/profile.html" class="button secondary">Perfil</a>
+      <button id="page-logout" class="button" type="button">Cerrar sesion</button>
     </nav>
   </header>
 
   <main class="app-shell">
-    <section class="hero-band">
-      <div class="hero-copy">
-        <h2 id="welcome-title">Cargando perfil...</h2>
-        <p id="hero-subtitle">
-          Busca peliculas, calificalas y deja que el recomendador se ajuste a tus gustos.
-        </p>
-      </div>
-    </section>
-
     <section class="content-band alt-band">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Para ti</p>
-          <h3>Peliculas recomendadas</h3>
+          <p class="eyebrow">Resultados</p>
+          <h3 id="search-title">Buscando...</h3>
         </div>
-        <p id="strategy-pill" class="strategy-pill">Cargando recomendaciones...</p>
       </div>
-      <div class="grid movies-grid" id="recommendations-grid"></div>
+      <div class="grid movies-grid" id="search-results-grid"></div>
     </section>
   </main>
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script type="module" src="/js/recommendations.js"></script>
+  <script type="module" src="/js/search.js"></script>
 </body>
 </html>

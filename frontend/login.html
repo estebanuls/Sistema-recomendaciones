@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso | MovieLens Recommender</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-intro">
+      <img src="/assets/logo.svg" alt="Logo" class="brand-logo large-logo">
+      <p class="eyebrow">MovieLens Recommender</p>
+      <h1>Convierte tus gustos en recomendaciones accionables</h1>
+      <p>
+        Este MVP usa el catálogo filtrado de MovieLens, registra tu historial y combina popularidad
+        con un modelo latente entrenable.
+      </p>
+    </section>
 
+    <section class="split-auth">
+      <article class="auth-panel">
+        <p class="eyebrow">Ingreso</p>
+        <h2>Entrar</h2>
+        <form id="login-form" class="stack-form">
+          <label>
+            Usuario
+            <input type="text" name="username" required autocomplete="username">
+          </label>
+          <label>
+            Contraseña
+            <input type="password" name="password" required autocomplete="current-password">
+          </label>
+          <button class="button" type="submit">Iniciar sesión</button>
+        </form>
+        <p id="login-message" class="inline-message"></p>
+      </article>
+
+      <article class="auth-panel">
+        <p class="eyebrow">Registro</p>
+        <h2>Crear cuenta</h2>
+        <form id="register-form" class="stack-form">
+          <label>
+            Nombre visible
+            <input type="text" name="display_name" required autocomplete="name">
+          </label>
+          <label>
+            Usuario
+            <input type="text" name="username" required autocomplete="username">
+          </label>
+          <label>
+            Contraseña
+            <input type="password" name="password" required minlength="6" autocomplete="new-password">
+          </label>
+          <button class="button secondary" type="submit">Crear cuenta</button>
+        </form>
+        <p id="register-message" class="inline-message"></p>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    import { mountAuthPage } from "/js/auth.js";
+
+    mountAuthPage();
+  </script>
+</body>
+</html>
