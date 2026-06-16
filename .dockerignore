@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+backend/logs/
+backend/data/app.db
+backend/data/artifacts/*.npy
+backend/data/artifacts/*.json
+backend/data/processed/*.npy
+backend/data/processed/*.npz
+backend/data/processed/*.json
+backend/data/processed/*.csv

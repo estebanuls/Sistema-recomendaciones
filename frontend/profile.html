@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil | MovieLens Recommender</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="app-body">
+  <header class="topbar">
+    <a href="/" class="brand" style="text-decoration:none; color:inherit;">
+      <img src="/assets/logo.svg" alt="Logo" class="brand-logo">
+      <div>
+        <p class="eyebrow">Perfil del usuario</p>
+        <h1 id="profile-title">Cargando...</h1>
+      </div>
+    </a>
+    <form class="navbar-search" id="navbar-search-form" action="/search.html">
+      <input
+        class="search-input"
+        type="search"
+        name="q"
+        placeholder="Buscar pelicula por titulo o genero..."
+        aria-label="Buscar pelicula"
+      >
+      <button class="button" type="submit">Buscar</button>
+    </form>
+    <nav class="nav-links">
+      <a href="/" class="button secondary">Inicio</a>
+      <button id="profile-logout" class="button" type="button">Cerrar sesion</button>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <section class="content-band">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Resumen</p>
+          <h2>Actividad del perfil</h2>
+        </div>
+      </div>
+      <div class="stat-grid" id="profile-stats"></div>
+    </section>
+
+    <section class="content-band alt-band">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Afinidad</p>
+          <h2>Generos mas fuertes</h2>
+        </div>
+      </div>
+      <div id="favorite-genres" class="chip-row"></div>
+    </section>
+
+    <section class="content-band">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Ultimos eventos</p>
+          <h2>Historial reciente</h2>
+        </div>
+      </div>
+      <div class="history-list" id="profile-history"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/js/profile.js"></script>
+</body>
+</html>

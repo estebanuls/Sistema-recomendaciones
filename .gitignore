@@ -1,0 +1,7 @@
+.docx_review/
+.docx_review_tmp/
+.tmp_test_workspace/
+backend/logs/
+*.pyc
+__pycache__/
+backend/data/app.db

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelicula | MovieLens Recommender</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="app-body">
+  <header class="topbar">
+    <a href="/" class="brand" style="text-decoration:none; color:inherit;">
+      <img src="/assets/logo.svg" alt="Logo" class="brand-logo">
+      <div>
+        <p class="eyebrow">Sistema de recomendacion</p>
+        <h1>Pelicula</h1>
+      </div>
+    </a>
+    <form class="navbar-search" id="navbar-search-form" action="/search.html">
+      <input
+        class="search-input"
+        type="search"
+        name="q"
+        placeholder="Buscar pelicula por titulo o genero..."
+        aria-label="Buscar pelicula"
+      >
+      <button class="button" type="submit">Buscar</button>
+    </form>
+    <nav class="nav-links">
+      <a href="/" class="button ghost">Inicio</a>
+      <a href="/profile.html" class="button secondary">Perfil</a>
+      <button id="page-logout" class="button" type="button">Cerrar sesion</button>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <section class="content-band alt-band">
+      <div id="movie-detail"></div>
+    </section>
+
+    <section class="content-band">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Descubrir</p>
+          <h3>Peliculas similares</h3>
+        </div>
+      </div>
+      <div class="grid movies-grid" id="similar-movies-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script type="module" src="/js/movie.js"></script>
+</body>
+</html>
