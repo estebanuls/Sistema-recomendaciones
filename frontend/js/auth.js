@@ -39,8 +39,14 @@ export async function requireSession() {
 
 export async function resolveActiveUser() {
   const session = await requireSession();
-  const response = await fetchCurrentUser(session.access_token);
-  return { session, user: response.user };
+  try {
+    const response = await fetchCurrentUser(session.access_token);
+    return { session, user: response.user };
+  } catch (error) {
+    clearSession();
+    window.location.href = "/login.html";
+    throw error;
+  }
 }
 
 function setMessage(element, message, status = "") {
